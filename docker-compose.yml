@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    volumes:
+      - /Users/adelysbelencarvajal/Projects/database-docker/postgres
+    ports:
+      - 5432:5432
+
+  mongo:
+    image: mongo:4.2.21-bionic
+    container_name: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - /Users/adelysbelencarvajal/Projects/database-docker/mongo
